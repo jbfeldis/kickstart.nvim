@@ -665,7 +665,9 @@ require('lazy').setup({
           },
         },
 
-        ruby_lsp = {},
+        ruby_lsp = {
+          cmd = { '/home/jb/.gem/ruby/3.4.1/bin/ruby-lsp' },
+        },
       }
 
       -- Ensure the servers and tools above are installed
