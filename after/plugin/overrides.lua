@@ -38,9 +38,8 @@ require('conform').setup({
   },
 })
 
--- Treesitter: extra regex highlighting for Rails ERB
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    additional_vim_regex_highlighting = { 'ruby', 'embedded_template' },
-  },
-})
+-- Treesitter: nvim-treesitter main branch (post 2026-04 refactor) removed
+-- `nvim-treesitter.configs`. Highlighting + parser install is now handled
+-- by kickstart init.lua directly. To get ERB (embedded_template), install
+-- the parser via `:lua require('nvim-treesitter').install({'embedded_template'})`
+-- once nvim-treesitter is on a recent main commit.
