@@ -1,4 +1,2 @@
-return {
-  require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.neo-tree',
-}
+require 'kickstart.plugins.indent_line'
+require 'kickstart.plugins.neo-tree'
