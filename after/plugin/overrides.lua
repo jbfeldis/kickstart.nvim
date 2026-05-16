@@ -25,16 +25,17 @@ require('telescope').setup({
 })
 
 -- Conform: per-filetype formatters (Ruby/JS/TS/Vue/JSON)
+-- For JS/TS family: try prettierd first, fall back to prettier (stop_after_first).
 require('conform').setup({
   formatters_by_ft = {
     ruby = { 'rubocop' },
-    typescript = { { 'prettierd', 'prettier' } },
-    javascriptreact = { { 'prettierd', 'prettier' } },
-    typescriptreact = { { 'prettierd', 'prettier' } },
-    vue = { { 'prettierd', 'prettier' } },
-    less = { { 'prettierd', 'prettier' } },
-    json = { { 'prettierd', 'prettier' } },
-    jsonc = { { 'prettierd', 'prettier' } },
+    typescript = { 'prettierd', 'prettier', stop_after_first = true },
+    javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+    typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+    vue = { 'prettierd', 'prettier', stop_after_first = true },
+    less = { 'prettierd', 'prettier', stop_after_first = true },
+    json = { 'prettierd', 'prettier', stop_after_first = true },
+    jsonc = { 'prettierd', 'prettier', stop_after_first = true },
   },
 })
 
