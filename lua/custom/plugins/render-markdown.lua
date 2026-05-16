@@ -1,14 +1,16 @@
-return {
-  'MeanderingProgrammer/render-markdown.nvim',
-  -- Temporarily disabled (2026-05-15 22h): the new main-branch of
-  -- nvim-treesitter no longer auto-installs parsers, so opening a .md
-  -- buffer crashes with "No parser for language markdown" which also
-  -- breaks neo-tree's open_file. To re-enable: install the parsers
-  -- (`:lua require('nvim-treesitter').install({'markdown', 'markdown_inline'})`)
-  -- then flip enabled back to true (or just remove this line).
-  enabled = false,
-  dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },
-  ---@module 'render-markdown'
-  ---@type render.md.UserConfig
-  opts = {},
-}
+-- No-op post-migration vim.pack (2026-05-16). Plugin not installed.
+--
+-- Original spec was `MeanderingProgrammer/render-markdown.nvim` but it was
+-- disabled on 2026-05-15 because the new main-branch of nvim-treesitter no
+-- longer auto-installs parsers (opening a .md crashed with "No parser for
+-- language markdown" and broke neo-tree's open_file in chain).
+--
+-- To re-enable later:
+--   1. Install the parsers:
+--      :lua require('nvim-treesitter').install({'markdown', 'markdown_inline'})
+--   2. Replace this file's body with:
+--      vim.pack.add { 'https://github.com/MeanderingProgrammer/render-markdown.nvim' }
+--      require('render-markdown').setup {}
+--
+-- Safe to delete this file. Kept as a stub during migration. Run:
+--   git rm lua/custom/plugins/render-markdown.lua

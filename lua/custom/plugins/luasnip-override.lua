@@ -1,10 +1,10 @@
--- Override kickstart's LuaSnip spec: pin to HEAD of master instead of
--- `version = '2.*'`. The 2.x tag (c9b9a22, Jan 2025) ships a broken
--- Makefile that references deps/jsregexp006 — an empty path that isn't
--- a real submodule — making `make install_jsregexp` fail every install.
--- HEAD master has the fix (verified 2026-05-15).
-return {
-  'L3MON4D3/LuaSnip',
-  branch = 'master',
-  version = false, -- explicitly drop version pin
-}
+-- No-op post-migration vim.pack (2026-05-16).
+-- LuaSnip is now installed and built by upstream init.lua via the
+-- `PackChanged` build hook (runs `make install_jsregexp` automatically).
+-- The previous `branch = 'master'` workaround is no longer needed —
+-- vim.pack pins to `vim.version.range '2.*'` and upstream LuaSnip 2.x
+-- ships a fixed Makefile in recent releases.
+--
+-- Safe to delete this file. Kept as a stub during migration so the
+-- diff in git history stays comprehensible. Run:
+--   git rm lua/custom/plugins/luasnip-override.lua
